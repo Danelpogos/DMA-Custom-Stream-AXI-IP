@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="dma_app" location="/home/danny/class/labs/lab8/software/dma_app" platform="/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/dma_sys_wrapper.xpfm" platformUID="xilinx:zybo-z7-10::0.0(custom)" systemProject="dma_app_system" sysConfig="dma_sys_wrapper" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="79f8404ff1a58a06f7fc2bba0fc0696b">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.426004759">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.21530209" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

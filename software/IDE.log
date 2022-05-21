@@ -1,0 +1,715 @@
+11:23:54 INFO  : Launching XSCT server: xsct -n  -interactive /home/danny/class/labs/lab8/software/temp_xsdb_launch_script.tcl
+11:23:54 INFO  : Platform repository initialization has completed.
+11:23:54 INFO  : Registering command handlers for Vitis TCF services
+11:23:59 INFO  : XSCT server has started successfully.
+11:23:59 INFO  : plnx-install-location is set to ''
+11:24:00 INFO  : Successfully done setting XSCT server connection channel  
+11:24:00 INFO  : Successfully done query RDI_DATADIR 
+11:24:00 INFO  : Successfully done setting workspace for the tool. 
+11:25:41 INFO  : Result from executing command 'getProjects': dma_sys_wrapper
+11:25:41 INFO  : Result from executing command 'getPlatforms': 
+11:25:41 WARN  : An unexpected exception occurred in the module 'platform project logging'
+11:25:41 INFO  : Platform 'dma_sys_wrapper' is added to custom repositories.
+11:26:01 INFO  : Platform 'dma_sys_wrapper' is added to custom repositories.
+11:52:37 INFO  : Result from executing command 'getProjects': dma_sys_wrapper
+11:52:37 INFO  : Result from executing command 'getPlatforms': dma_sys_wrapper|/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/dma_sys_wrapper.xpfm
+11:52:40 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+12:00:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+12:00:17 INFO  : 'fpga -state' command is executed.
+12:00:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:00:18 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+12:00:18 INFO  : 'jtag frequency' command is executed.
+12:00:18 INFO  : Context for 'APU' is selected.
+12:00:18 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+12:00:18 INFO  : 'configparams force-mem-access 1' command is executed.
+12:00:18 INFO  : Context for 'APU' is selected.
+12:00:18 INFO  : 'stop' command is executed.
+12:00:18 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+12:00:18 INFO  : 'ps7_init' command is executed.
+12:00:18 INFO  : 'ps7_post_config' command is executed.
+12:00:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:00:18 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:00:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:00:19 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:00:19 INFO  : 'configparams force-mem-access 0' command is executed.
+12:00:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:00:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:00:19 INFO  : 'con' command is executed.
+12:00:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:00:19 INFO  : Disconnected from the channel tcfchan#2.
+12:00:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+12:00:39 INFO  : 'fpga -state' command is executed.
+12:00:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:00:40 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+12:00:40 INFO  : 'jtag frequency' command is executed.
+12:00:40 INFO  : Context for 'APU' is selected.
+12:00:40 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+12:00:40 INFO  : 'configparams force-mem-access 1' command is executed.
+12:00:40 INFO  : Context for 'APU' is selected.
+12:00:40 INFO  : 'stop' command is executed.
+12:00:40 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+12:00:40 INFO  : 'ps7_init' command is executed.
+12:00:40 INFO  : 'ps7_post_config' command is executed.
+12:00:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:00:40 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:00:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:00:40 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:00:40 INFO  : 'configparams force-mem-access 0' command is executed.
+12:00:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:00:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:00:41 INFO  : 'con' command is executed.
+12:00:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:00:41 INFO  : Disconnected from the channel tcfchan#3.
+12:04:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+12:04:09 INFO  : 'fpga -state' command is executed.
+12:04:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:04:10 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+12:04:10 INFO  : 'jtag frequency' command is executed.
+12:04:10 INFO  : Context for 'APU' is selected.
+12:04:10 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+12:04:10 INFO  : 'configparams force-mem-access 1' command is executed.
+12:04:10 INFO  : Context for 'APU' is selected.
+12:04:10 INFO  : 'stop' command is executed.
+12:04:10 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+12:04:10 INFO  : 'ps7_init' command is executed.
+12:04:10 INFO  : 'ps7_post_config' command is executed.
+12:04:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:04:10 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:04:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:04:10 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:04:10 INFO  : 'configparams force-mem-access 0' command is executed.
+12:04:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:04:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:04:10 INFO  : 'con' command is executed.
+12:04:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:04:10 INFO  : Disconnected from the channel tcfchan#4.
+12:29:59 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+12:34:45 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+12:35:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+12:35:10 INFO  : 'fpga -state' command is executed.
+12:35:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:35:10 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+12:35:10 INFO  : 'jtag frequency' command is executed.
+12:35:10 INFO  : Context for 'APU' is selected.
+12:35:10 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+12:35:10 INFO  : 'configparams force-mem-access 1' command is executed.
+12:35:10 INFO  : Context for 'APU' is selected.
+12:35:10 INFO  : 'stop' command is executed.
+12:35:10 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+12:35:10 INFO  : 'ps7_init' command is executed.
+12:35:10 INFO  : 'ps7_post_config' command is executed.
+12:35:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:35:10 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+12:35:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:35:10 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:35:10 INFO  : 'configparams force-mem-access 0' command is executed.
+12:35:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:35:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:35:10 INFO  : 'con' command is executed.
+12:35:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:35:10 INFO  : Disconnected from the channel tcfchan#5.
+13:29:34 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+13:29:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+13:29:39 INFO  : 'fpga -state' command is executed.
+13:29:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:29:39 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+13:29:39 INFO  : 'jtag frequency' command is executed.
+13:29:39 INFO  : Context for 'APU' is selected.
+13:29:39 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+13:29:39 INFO  : 'configparams force-mem-access 1' command is executed.
+13:29:39 INFO  : Context for 'APU' is selected.
+13:29:39 INFO  : 'stop' command is executed.
+13:29:39 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+13:29:40 INFO  : 'ps7_init' command is executed.
+13:29:40 INFO  : 'ps7_post_config' command is executed.
+13:29:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:29:40 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:29:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:29:40 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:29:40 INFO  : 'configparams force-mem-access 0' command is executed.
+13:29:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:29:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:29:40 INFO  : 'con' command is executed.
+13:29:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:29:40 INFO  : Disconnected from the channel tcfchan#6.
+13:32:01 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+13:32:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+13:32:06 INFO  : 'fpga -state' command is executed.
+13:32:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:32:06 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+13:32:06 INFO  : 'jtag frequency' command is executed.
+13:32:06 INFO  : Context for 'APU' is selected.
+13:32:06 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+13:32:06 INFO  : 'configparams force-mem-access 1' command is executed.
+13:32:06 INFO  : Context for 'APU' is selected.
+13:32:06 INFO  : 'stop' command is executed.
+13:32:06 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+13:32:06 INFO  : 'ps7_init' command is executed.
+13:32:06 INFO  : 'ps7_post_config' command is executed.
+13:32:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:32:06 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:32:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:32:06 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:32:06 INFO  : 'configparams force-mem-access 0' command is executed.
+13:32:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:32:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:32:06 INFO  : 'con' command is executed.
+13:32:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:32:06 INFO  : Disconnected from the channel tcfchan#7.
+13:33:46 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+13:33:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+13:33:51 INFO  : 'fpga -state' command is executed.
+13:33:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:33:51 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+13:33:51 INFO  : 'jtag frequency' command is executed.
+13:33:51 INFO  : Context for 'APU' is selected.
+13:33:51 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+13:33:51 INFO  : 'configparams force-mem-access 1' command is executed.
+13:33:51 INFO  : Context for 'APU' is selected.
+13:33:51 INFO  : 'stop' command is executed.
+13:33:51 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+13:33:51 INFO  : 'ps7_init' command is executed.
+13:33:51 INFO  : 'ps7_post_config' command is executed.
+13:33:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:33:51 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:33:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:33:52 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:33:52 INFO  : 'configparams force-mem-access 0' command is executed.
+13:33:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:33:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:33:52 INFO  : 'con' command is executed.
+13:33:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:33:52 INFO  : Disconnected from the channel tcfchan#8.
+13:42:56 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+13:43:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+13:43:08 INFO  : 'fpga -state' command is executed.
+13:43:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:43:08 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+13:43:08 INFO  : 'jtag frequency' command is executed.
+13:43:08 INFO  : Context for 'APU' is selected.
+13:43:08 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+13:43:08 INFO  : 'configparams force-mem-access 1' command is executed.
+13:43:08 INFO  : Context for 'APU' is selected.
+13:43:08 INFO  : 'stop' command is executed.
+13:43:08 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+13:43:08 INFO  : 'ps7_init' command is executed.
+13:43:08 INFO  : 'ps7_post_config' command is executed.
+13:43:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:43:08 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:43:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:43:09 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:43:09 INFO  : 'configparams force-mem-access 0' command is executed.
+13:43:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:43:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:43:09 INFO  : 'con' command is executed.
+13:43:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:43:09 INFO  : Disconnected from the channel tcfchan#9.
+13:43:37 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+13:43:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+13:43:43 INFO  : 'fpga -state' command is executed.
+13:43:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:43:43 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+13:43:43 INFO  : 'jtag frequency' command is executed.
+13:43:43 INFO  : Context for 'APU' is selected.
+13:43:43 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+13:43:43 INFO  : 'configparams force-mem-access 1' command is executed.
+13:43:43 INFO  : Context for 'APU' is selected.
+13:43:43 INFO  : 'stop' command is executed.
+13:43:43 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+13:43:44 INFO  : 'ps7_init' command is executed.
+13:43:44 INFO  : 'ps7_post_config' command is executed.
+13:43:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:43:44 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:43:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:43:44 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:43:44 INFO  : 'configparams force-mem-access 0' command is executed.
+13:43:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:43:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:43:44 INFO  : 'con' command is executed.
+13:43:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:43:44 INFO  : Disconnected from the channel tcfchan#10.
+13:43:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+13:43:54 INFO  : 'fpga -state' command is executed.
+13:43:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:43:55 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+13:43:55 INFO  : 'jtag frequency' command is executed.
+13:43:55 INFO  : Context for 'APU' is selected.
+13:43:55 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+13:43:55 INFO  : 'configparams force-mem-access 1' command is executed.
+13:43:55 INFO  : Context for 'APU' is selected.
+13:43:55 INFO  : 'stop' command is executed.
+13:43:55 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+13:43:55 INFO  : 'ps7_init' command is executed.
+13:43:55 INFO  : 'ps7_post_config' command is executed.
+13:43:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:43:55 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:43:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:43:55 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:43:55 INFO  : 'configparams force-mem-access 0' command is executed.
+13:43:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:43:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:43:55 INFO  : 'con' command is executed.
+13:43:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:43:55 INFO  : Disconnected from the channel tcfchan#11.
+13:44:07 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+13:44:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+13:44:14 INFO  : 'fpga -state' command is executed.
+13:44:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:44:14 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+13:44:14 INFO  : 'jtag frequency' command is executed.
+13:44:14 INFO  : Context for 'APU' is selected.
+13:44:14 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+13:44:14 INFO  : 'configparams force-mem-access 1' command is executed.
+13:44:14 INFO  : Context for 'APU' is selected.
+13:44:14 INFO  : 'stop' command is executed.
+13:44:14 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+13:44:14 INFO  : 'ps7_init' command is executed.
+13:44:14 INFO  : 'ps7_post_config' command is executed.
+13:44:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:44:14 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:44:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:44:14 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:44:14 INFO  : 'configparams force-mem-access 0' command is executed.
+13:44:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:44:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:44:15 INFO  : 'con' command is executed.
+13:44:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:44:15 INFO  : Disconnected from the channel tcfchan#12.
+13:44:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+13:44:21 INFO  : 'fpga -state' command is executed.
+13:44:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:44:21 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+13:44:21 INFO  : 'jtag frequency' command is executed.
+13:44:21 INFO  : Context for 'APU' is selected.
+13:44:21 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+13:44:21 INFO  : 'configparams force-mem-access 1' command is executed.
+13:44:21 INFO  : Context for 'APU' is selected.
+13:44:21 INFO  : 'stop' command is executed.
+13:44:21 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+13:44:21 INFO  : 'ps7_init' command is executed.
+13:44:21 INFO  : 'ps7_post_config' command is executed.
+13:44:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:44:21 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:44:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:44:21 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:44:21 INFO  : 'configparams force-mem-access 0' command is executed.
+13:44:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:44:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:44:21 INFO  : 'con' command is executed.
+13:44:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:44:21 INFO  : Disconnected from the channel tcfchan#13.
+13:51:26 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+13:51:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+13:51:34 INFO  : 'fpga -state' command is executed.
+13:51:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:51:34 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+13:51:34 INFO  : 'jtag frequency' command is executed.
+13:51:34 INFO  : Context for 'APU' is selected.
+13:51:34 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+13:51:34 INFO  : 'configparams force-mem-access 1' command is executed.
+13:51:34 INFO  : Context for 'APU' is selected.
+13:51:34 INFO  : 'stop' command is executed.
+13:51:34 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+13:51:34 INFO  : 'ps7_init' command is executed.
+13:51:34 INFO  : 'ps7_post_config' command is executed.
+13:51:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:51:34 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:51:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:51:34 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:51:34 INFO  : 'configparams force-mem-access 0' command is executed.
+13:51:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:51:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:51:34 INFO  : 'con' command is executed.
+13:51:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:51:34 INFO  : Disconnected from the channel tcfchan#14.
+13:58:59 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+13:59:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+13:59:07 INFO  : 'fpga -state' command is executed.
+13:59:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:59:07 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+13:59:07 INFO  : 'jtag frequency' command is executed.
+13:59:07 INFO  : Context for 'APU' is selected.
+13:59:07 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+13:59:07 INFO  : 'configparams force-mem-access 1' command is executed.
+13:59:07 INFO  : Context for 'APU' is selected.
+13:59:07 INFO  : 'stop' command is executed.
+13:59:07 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+13:59:07 INFO  : 'ps7_init' command is executed.
+13:59:07 INFO  : 'ps7_post_config' command is executed.
+13:59:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:59:07 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:59:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:59:07 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:59:07 INFO  : 'configparams force-mem-access 0' command is executed.
+13:59:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:59:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:59:07 INFO  : 'con' command is executed.
+13:59:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:59:07 INFO  : Disconnected from the channel tcfchan#15.
+13:59:28 INFO  : Checking for BSP changes to sync application flags for project 'dma_app'...
+13:59:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+13:59:32 INFO  : 'fpga -state' command is executed.
+13:59:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:59:33 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+13:59:33 INFO  : 'jtag frequency' command is executed.
+13:59:33 INFO  : Context for 'APU' is selected.
+13:59:33 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+13:59:33 INFO  : 'configparams force-mem-access 1' command is executed.
+13:59:33 INFO  : Context for 'APU' is selected.
+13:59:33 INFO  : 'stop' command is executed.
+13:59:33 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+13:59:33 INFO  : 'ps7_init' command is executed.
+13:59:33 INFO  : 'ps7_post_config' command is executed.
+13:59:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:59:33 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+13:59:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:59:33 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:59:33 INFO  : 'configparams force-mem-access 0' command is executed.
+13:59:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:59:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:59:33 INFO  : 'con' command is executed.
+13:59:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:59:33 INFO  : Disconnected from the channel tcfchan#16.
+14:03:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351AF24E5A" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351AF24E5A-13722093-0"}' command is executed.
+14:03:25 INFO  : 'fpga -state' command is executed.
+14:03:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:03:25 INFO  : Jtag cable 'Digilent Zybo Z7 210351AF24E5A' is selected.
+14:03:25 INFO  : 'jtag frequency' command is executed.
+14:03:25 INFO  : Context for 'APU' is selected.
+14:03:25 INFO  : Hardware design and registers information is loaded from '/home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa'.
+14:03:25 INFO  : 'configparams force-mem-access 1' command is executed.
+14:03:25 INFO  : Context for 'APU' is selected.
+14:03:25 INFO  : 'stop' command is executed.
+14:03:25 INFO  : Sourcing of '/home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl' is done.
+14:03:26 INFO  : 'ps7_init' command is executed.
+14:03:26 INFO  : 'ps7_post_config' command is executed.
+14:03:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:03:26 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:03:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:03:26 INFO  : The application '/home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:03:26 INFO  : 'configparams force-mem-access 0' command is executed.
+14:03:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/danny/class/labs/lab8/software/dma_sys_wrapper/export/dma_sys_wrapper/hw/dma_sys_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+stop
+source /home/danny/class/labs/lab8/software/dma_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+rst -processor
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/danny/class/labs/lab8/software/dma_app/Debug/dma_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:03:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:03:26 INFO  : 'con' command is executed.
+14:03:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:03:26 INFO  : Disconnected from the channel tcfchan#17.
